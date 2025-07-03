@@ -27,7 +27,7 @@ export default function Header() {
         {/* Right: CTA / Icon */}
         <div className="flex items-center space-x-3">
           <button className="px-4 py-2 font-semibold rounded-lg bg-gradient-to-r from-[#f97316] to-[#22c55e] text-black hover:scale-105 transition duration-200">
-            Join Devs
+            Join Bug
           </button>
         </div>
       </div>
