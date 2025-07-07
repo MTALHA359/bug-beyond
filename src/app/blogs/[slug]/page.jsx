@@ -492,26 +492,192 @@ You won’t just save time — you’ll code smarter, better, and faster.`},
     slug: 'css-tricks-2025',
     title: '🎨 CSS Tricks You Should Know in 2025',
     date: 'June 5, 2025',
-    content: `Use container queries, subgrid, accent-color, and other CSS 2025 updates for cleaner layouts.`,
+    content: `Modern CSS has evolved. These powerful techniques can help you write cleaner, more flexible, and future-proof styles.
+
+1. Parent-Based Styling with the :has() Selector
+You can now style a parent element based on what's inside it. This opens up new design possibilities like highlighting cards with specific content or showing visual changes when an input has an error.
+
+2. Responsive Layouts with Container Queries
+Instead of relying on the screen size, you can now make elements responsive based on the size of their container. This is perfect for reusable components like cards, widgets, or dashboard panels.
+
+3. Smarter Grids with Subgrid
+Subgrid allows child elements to align with the grid of their parent, making nested layouts more consistent and aligned. It’s ideal for complex layouts where everything needs to stay in sync.
+
+4. Smoother Experiences with Scroll Snap
+Scroll snapping lets you control how content scrolls. It's great for carousels, galleries, or full-page sections where each item should "snap" into place as you scroll.
+
+5. Custom Styling with Accent Color
+You can now style checkboxes, radio buttons, and progress bars using a simple property. This removes the need for custom JavaScript or styling hacks.
+
+6. Simpler Selectors with :is() and :where()
+These selectors help reduce code duplication by grouping multiple elements under one style. They make your CSS cleaner and easier to maintain.
+
+7. Direction-Aware Styling with Logical Properties
+Instead of hardcoding left/right or top/bottom, logical properties adapt based on text direction. This makes your design automatically support both left-to-right and right-to-left languages.
+
+8. Fluid Typography with Clamp
+This technique lets your text size adjust smoothly between small and large screens without using multiple media queries. It's ideal for responsive and accessible designs.
+
+9. Custom Media Queries
+You can name your breakpoints and reuse them throughout your stylesheet, improving consistency and making your code easier to understand and scale.
+
+10. Native CSS Nesting
+Just like in Sass or SCSS, you can now nest styles directly in CSS. It keeps related rules grouped together, improving readability and organization — without any build tools.
+
+💡 Bonus Tips
+Support dark mode with user preference detection
+
+Use CSS layers to manage style priority in large projects
+
+Regularly audit and remove unused styles for better performance
+
+📘 Final Thoughts
+CSS in 2025 is smart, flexible, and easier to write than ever before.
+By learning and applying these tricks, you’ll save time, reduce complexity, and create more maintainable, elegant designs — all with pure CSS.`,
   },
   {
     slug: 'dark-mode-tips',
     title: '🌙 Dark Mode Implementation Tips',
     date: 'May 29, 2025',
-    content: `Build clean dark mode toggles with Tailwind, prefers-color-scheme, and localStorage support.`,
+    content: `Make your apps easier on the eyes — and modern users will thank you for it.
+
+1. Respect User Preferences
+Always start by detecting whether the user prefers dark mode through their system settings. Modern devices and browsers support this preference, and honoring it makes your app feel more native and respectful.
+
+2. Use CSS Variables for Theming
+Define a set of color variables for light and dark themes. This way, you can switch the entire theme by changing just one class or state — instead of rewriting every style.
+
+3. Provide a Manual Toggle
+Even if you respect the system setting, many users appreciate having the option to manually switch between light and dark. Include a toggle button in an easily accessible place, like the header or footer.
+
+4. Store User Preference
+Save the selected mode (light or dark) in local storage or cookies so the app remembers their choice the next time they visit. This improves UX and keeps the experience consistent.
+
+5. Design with Contrast in Mind
+Dark mode isn’t just about inverting colors. Use proper contrast between text and background, avoid pure black or pure white, and test readability under both themes.
+
+6. Avoid Using Only Color to Convey Meaning
+Make sure icons, labels, and elements remain recognizable in both light and dark modes. Use shapes, patterns, or labels — not just color — to show states or actions.
+
+7. Test All Components
+Make sure every part of your app (modals, tooltips, charts, etc.) works well in both modes. Don’t forget hover states, shadows, and borders — they often need adjustments in dark themes.
+
+8. Use Smooth Transitions
+Switching between themes should feel fluid. Add a subtle transition to background and color changes so it doesn’t feel jarring.
+
+9. Watch Out for Third-Party Libraries
+Some UI libraries or components may not support dark mode out of the box. Ensure they inherit your theme or override their styles if needed.
+
+10. Document and Organize Your Theme System
+Keep your color palette, variable naming, and theming logic organized. Future you (or your team) will appreciate having a clear structure when scaling or editing your app.
+
+💡 Bonus Tips
+Test in different lighting environments
+
+Ensure accessibility and colorblind compatibility
+
+Offer system theme sync as a default
+
+Use design tokens for cross-platform dark mode (web, mobile, desktop)
+
+🌘 Final Thought
+Dark mode isn't just trendy — it's practical, comfortable, and expected in modern design. Implement it well, and you enhance both the aesthetics and usability of your product.`,
   },
   {
     slug: 'react-performance-tips',
     title: '⚡ Optimizing React Performance',
     date: 'May 20, 2025',
-    content: `Avoid unnecessary re-renders with memoization, lazy loading, and batching state updates.`,
+    content: `Build faster, smoother apps by applying smart performance techniques — especially important as your React projects grow.
+
+1. Avoid Unnecessary Re-renders
+When components re-render too often or without changes, performance takes a hit. Be mindful of what causes renders — like prop or state updates — and minimize them where possible.
+
+2. Use React.memo for Component Caching
+Wrap pure components (those that render the same output for the same props) with React memoization. This tells React to skip re-rendering if nothing has changed.
+
+3. Split Components with Dynamic Imports
+Instead of loading everything at once, use lazy loading to split large components or pages. This speeds up initial load time and improves perceived performance.
+
+4. Keep Component Trees Flat
+Deeply nested components can slow rendering. Try to keep component hierarchies shallow and organized — this helps React reconcile updates faster.
+
+5. Debounce or Throttle Expensive Operations
+For things like search input, scroll tracking, or resize listeners, don’t update state on every event. Instead, limit how often updates occur to avoid overwhelming the render cycle.
+
+6. Minimize Anonymous Functions in JSX
+Using anonymous functions or inline arrow functions inside JSX can lead to unnecessary re-renders. Move handlers outside the render or use useCallback to stabilize them.
+
+7. Use useCallback and useMemo Wisely
+These hooks help memoize functions and values so they don’t get recreated on every render. Use them for expensive calculations or when passing props to child components.
+
+8. Optimize List Rendering with Keys
+Always provide a unique, stable key when rendering lists. Avoid using index as a key unless you're sure the list won't change.
+
+9. Keep State Local When Possible
+Don’t lift state higher than necessary. Keeping state close to the components that use it reduces re-renders in other parts of the tree.
+
+10. Monitor Performance with DevTools
+Use React Developer Tools to inspect render timings and track what triggers component updates. Chrome DevTools’ Performance tab is also helpful for profiling.
+
+💡 Bonus Tips
+Prefer functional components over class components for cleaner optimization
+
+Avoid deeply nested contexts or use selectors when working with context
+
+Consider libraries like Zustand, Recoil, or Redux Toolkit for managing state efficiently
+
+Clean up side effects in useEffect to avoid memory leaks
+
+🚀 Final Thought
+Performance isn’t just about speed — it’s about responsiveness, user experience, and scalability. Optimize React smartly, and your users (and your future self) will thank you.`,
   },
   {
     slug: 'git-tips',
     title: '🔧 10 Git Tips Every Developer Should Know',
     date: 'May 15, 2025',
-    content: `From interactive rebase to bisect, these Git commands can change your workflow forever.`,
-  },
+    content: `Mastering Git helps you manage code confidently, recover from mistakes, and collaborate like a pro.
+
+1. Commit Often — But With Purpose
+Small, focused commits make it easier to track changes, review history, and resolve conflicts. Write clear commit messages that describe why a change was made.
+
+2. Use Branches for Every Feature
+Create a new branch for each task or bug fix. This keeps your main codebase clean and makes merging easier later on.
+
+3. Pull Before You Push
+Always pull the latest changes from the remote branch before pushing your own work. This helps avoid conflicts and keeps your branch up to date.
+
+4. Use Meaningful Branch Names
+Branch names like fix-login-issue or feature/user-dashboard describe their purpose. This helps teammates understand the project structure at a glance.
+
+5. Stash Changes When Switching Context
+If you need to change branches but don’t want to lose your current work, stash your changes. You can reapply them later when you're ready to resume.
+
+6. Review Diffs Before Committing
+Before running a commit, check the changes with a diff. It helps catch mistakes like debug code, forgotten console logs, or unnecessary changes.
+
+7. Undo Commits Without Losing Work
+Made a wrong commit? You can undo it while keeping the changes in your working directory, so you can recommit properly.
+
+8. Use .gitignore to Keep Repos Clean
+Exclude files like node_modules, .env, and temporary folders so they don’t clutter your version history or cause issues for others.
+
+9. Rebase for Clean History (With Caution)
+Rebasing rewrites commit history to make it linear and cleaner. It’s great before merging, but be careful — never rebase shared branches unless you know what you're doing.
+
+10. Use Git Aliases to Save Time
+Speed up your workflow with custom shortcuts. For example, you can create a shortcut for checking status, viewing logs, or running common commands.
+
+⚡ Bonus Tips
+Use Git GUI tools (like GitHub Desktop or VS Code Git view) for visual clarity
+
+Squash commits when merging PRs for a tidy history
+
+Use tags to mark release versions
+
+Always double-check before pushing to main or production branches
+
+🧠 Final Thought
+Git is more than just version control — it’s your project’s safety net. Mastering these tips will save you time, reduce errors, and make you a stronger collaborator.`,},
   {
     slug: 'npm-scripts-guide',
     title: '📦 NPM Scripts Mastery',
